@@ -256,6 +256,8 @@ class planar_diagram:
                 k.append(Symbol(f"k_{i}"))
                 term *= k[i - 1]**loops_and_states[i]
             poly += simplify(term)
+
+        # Normalize the arrow polynomial. 
         writhe = 0
         for crossing in self.crossings:
             writhe = writhe + 1 if crossing.handedness else writhe - 1
